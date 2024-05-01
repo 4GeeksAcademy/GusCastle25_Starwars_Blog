@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Charaters } from "./characters";
 
 export const Navbar = () => {
     return (
         <nav className="navbar bg-transparent p-2">
             <Link to="/">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="#">
                    <img
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2560px-Star_Wars_Logo.svg.png"
                         width="90"
