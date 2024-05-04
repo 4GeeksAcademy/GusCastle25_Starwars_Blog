@@ -3,7 +3,6 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 import { Characters } from "./characters";
-import { isHtmlElement } from "react-router-dom/dist/dom";
 
 export const Nave = (props) => {
     return (
@@ -13,7 +12,9 @@ export const Nave = (props) => {
                 <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">Nave info.</p>
                 <a href="#" className="btn btn-primary">Go somewhere</a>
-            <Link to={"/single/1"}><span>Lint to: {isHtmlElement.title}</span></Link>
+                <Link to={"/single/1"}>
+                    <span>Ver nave</span>
+                </Link>
             </div>
         </div>
     );

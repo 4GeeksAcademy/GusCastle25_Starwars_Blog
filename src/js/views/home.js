@@ -8,7 +8,7 @@ import { Context } from "../store/appContext";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
-	const [starships, setStarships] = useState([])
+	const [starship, setStarship] = useState([])
 
 	return (
 		<div className="text-center mt-5">
