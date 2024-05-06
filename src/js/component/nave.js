@@ -1,18 +1,16 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
-import { Characters } from "./characters";
 
 export const Nave = (props) => {
     return (
         <div className="card" style={{ width: "18rem" }}>
-            <img src="..." className="card-img-top" alt="..." />
+            <img src="https://frikipolis.com/wp-content/uploads/2022/09/El-Halco%CC%81n-Milenario-Star-Wars.jpg" className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
-                <p className="card-text">Nave info.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
-                <Link to={"/single/1"}>
+                <p className="card-text">{props.uid}</p>
+
+                <Link className="btn btn-primary" to={"/nave/" + props.uid}>
                     <span>Ver nave</span>
                 </Link>
             </div>

@@ -15,7 +15,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					"name": "white2",
 					"url": "white2"
 				}
-
+			],
+			personajes: [
+				{
+					"uid": "FIRST",
+					"name": "white",
+					"url": "white"
+				},
+				{
+					"uid": "SECOND",
+					"name": "white2",
+					"url": "white2"
+				}
 			]
 
 		},
