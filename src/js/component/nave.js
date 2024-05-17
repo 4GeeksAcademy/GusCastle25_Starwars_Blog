@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Nave = (props) => {
     return (
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card mx-1" style={{ width: "18rem" }}>
             <img src="https://frikipolis.com/wp-content/uploads/2022/09/El-Halco%CC%81n-Milenario-Star-Wars.jpg" className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
