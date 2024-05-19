@@ -16,7 +16,7 @@ export const Navbar = () => {
         <nav className="navbar bg-transparent p-2">
             <Link to="/">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="https://www.starwars.com/">
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2560px-Star_Wars_Logo.svg.png"
                             width="90"

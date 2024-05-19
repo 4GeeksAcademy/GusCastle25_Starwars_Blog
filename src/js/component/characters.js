@@ -16,11 +16,11 @@ export const Characters = (props) => {
     return (
         <div className="card mx-1" style={{ width: "18rem" }}>
             <img src={`https://starwars-visualguide.com/assets/img/characters/${props.uid}.jpg`} className="card-img-top" alt="..." />
-            <div className="card-body">
+            <div className="card-body text-white">
                 <h5 className="card-title">{props.title}</h5>
-                <Link className="btn btn-primary" to={"/people/" + props.uid}><span className="more">Ver personaje</span></Link>
+                <Link className="btn btn-dark" to={"/people/" + props.uid}><span className="more">People</span></Link>
                 <button className="btn btn-outline-warning" onClick={handleAddFavorites}>
-                    <i className={isFavorite ? "fa fa-heart text-danger" : "fa fa-heart text-black"}></i>
+                    <i className={isFavorite ? "fa fa-heart text-danger" : "fa fa-heart text-white"}></i>
                 </button>
             </div>
         </div>

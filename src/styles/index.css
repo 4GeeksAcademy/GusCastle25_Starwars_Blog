@@ -4,3 +4,22 @@
 body {
     background-image: url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png');
 }
+.card {
+    background-image: url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png');
+}
+.index-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+  }
+  
+  .visible {
+    opacity: 1;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }

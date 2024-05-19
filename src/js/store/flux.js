@@ -28,9 +28,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					"url": "white2"
 				}
 			],
+			planet: [],
 			message: "inicial desde flux",
 			misCharacters: [],
-			favorites:[]
+			favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -39,18 +40,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			changeMessage: (titulo) => {
 				setStore({ message: titulo });
-				setStore({ misCharacters: "1"+"2" });
+				setStore({ misCharacters: "1" + "2" });
 				console.log("changeMessage desde flux" + titulo)
 			},
 			addFavorites: (name) => {
-				const currentfavorites=getStore().favorites
+				const currentfavorites = getStore().favorites
 				const newfavorites = [...currentfavorites, name];
 				setStore({ favorites: newfavorites });
 			},
 			removeFavorite: (uid) => {
 				const store = getStore();
 				const newfavorites = store.favorites.filter(favorite => favorite.uid !== uid);
-				setStore({ favorites: newfavorites});
+				setStore({ favorites: newfavorites });
 			},
 			loadSomeData: () => {
 				/**
@@ -67,7 +68,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then((data) => setStore({ personajes: data.results }))
 					.catch((error) => console.error(error));
 				console.log("se cargo desde flux ")
+
+				fetch("https://www.swapi.tech/api/planets", { method: "GET" })
+					.then((response) => response.json())
+					.then((data) => setStore({ planet: data.results }))
+					.catch((error) => console.error(error));
+				console.log("se cargo desde flux ")
 			},
+
 
 			changeColor: (index, color) => {
 				//get the store
