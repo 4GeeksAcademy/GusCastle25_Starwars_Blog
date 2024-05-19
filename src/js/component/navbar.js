@@ -27,6 +27,10 @@ export const Navbar = () => {
                 </div>
             </Link>
             <span className="mainTitle text-white"> A long time ago in a galaxy far, far away....</span>
+            <div className="social d-flex gap-3 p-3">
+                <a href="https://github.com/GusCastle25" className="star-wars-link"><i className="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gustavo-castillo-hern%C3%A1ndez-248a101b0/" className="star-wars-link"><i className="fa-brands fa-linkedin"></i></a>
+            </div>
             <div className="ml-auto text-white">
                 <div className="dropdown" onClick={handleDropdown}>
                     <button className="btn btn-primary btn-outline-success dropdown-toggle" type="button">
