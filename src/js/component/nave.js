@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
@@ -6,15 +6,28 @@ import { Link } from "react-router-dom";
 export const Nave = (props) => {
     const { store, actions } = useContext(Context);
 
+    const [imageError, setImageError] = useState(false);
+
     const isFavorite = store.favorites.some(favorite => favorite.uid === props.uid);
 
     const handleAddFavorites = () => {
         isFavorite ? actions.removeFavorite(props.uid) :
             actions.addFavorites({ title: props.title, uid: props.uid });
     };
+    const handleImageError = () => {
+        setImageError(true);
+    };
     return (
         <div className="card mx-1" style={{ width: "18rem" }}>
-            <img src="https://frikipolis.com/wp-content/uploads/2022/09/El-Halco%CC%81n-Milenario-Star-Wars.jpg" className="card-img-top" alt="..." />
+            {imageError ? ( // Si hay un error al cargar la imagen, mostrar una imagen alternativa
+                <img
+                    src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/01/Millennium-Falcon-1.jpg"
+                    className="card-img-top"
+                    alt="Character"
+                />
+            ) : (
+                <img src={`https://starwars-visualguide.com/assets/img/starships/${props.uid}.jpg`} className="card-img-top" alt="..." onError={handleImageError} />
+            )}
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
                 <Link className="btn btn-primary" to={"/nave/" + props.uid}><span className="more">Ver personaje</span></Link>
