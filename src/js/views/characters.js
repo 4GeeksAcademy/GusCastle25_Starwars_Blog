@@ -21,9 +21,10 @@ export const Characters = props => {
 			<h1 className="display-4">{people.name}: {params.people_id}</h1>
 
 			<hr className="my-4" />
-			<p>eye_color: {people.eye_color}</p>
-			<p>description: {people.description}</p>
 			<p>name: {people.name}</p>
+			<p>eye_color: {people.eye_color}</p>
+			<p>height: {people.height}</p>
+			<p>homeworld: {people.homeworld}</p>
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home
