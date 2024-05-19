@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Nave = props => {
-	const { store, actions } = useContext(Context);
 	const [starship, setStarship] = useState({})
 	const params = useParams();
 

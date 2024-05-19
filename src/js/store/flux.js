@@ -44,8 +44,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addFavorites: (name) => {
 				const currentfavorites=getStore().favorites
-				const newfavorites = [...currentfavorites, name]
-				setStore({ favorites: newfavorites })
+				const newfavorites = [...currentfavorites, name];
+				setStore({ favorites: newfavorites });
+			},
+			removeFavorite: (uid) => {
+				const store = getStore();
+				const newfavorites = store.favorites.filter(favorite => favorite.uid !== uid);
+				setStore({ favorites: newfavorites});
 			},
 			loadSomeData: () => {
 				/**

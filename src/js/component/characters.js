@@ -6,6 +6,12 @@ import { Link } from "react-router-dom";
 export const Characters = (props) => {
     const { store, actions } = useContext(Context);
     
+    const isFavorite = store.favorites.some(favorite => favorite.uid === props.uid);
+    
+    const handleAddFavorites =() => {
+        isFavorite ? actions.removeFavorite(props.uid) :
+            actions.addFavorites({ title: props.title, uid: props.uid});
+    };
 
     return (
         <div className="card mx-1" style={{ width: "18rem" }}>
@@ -13,7 +19,9 @@ export const Characters = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
                 <Link className="btn btn-primary" to={"/people/" + props.uid}><span className="more">Ver personaje</span></Link>
-                <button onClick={() => actions.addFavorites(props.title) }>Cambiar msj</button>
+                <button className="btn btn-outline-warning" onClick={handleAddFavorites}>
+                    <i className={isFavorite ? "fa fa-heart text-danger" : "fa fa-heart text-black"}></i>
+                </button>
             </div>
         </div>
     );
