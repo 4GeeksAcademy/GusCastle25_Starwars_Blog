@@ -8,11 +8,11 @@ export const Planets = (props) => {
 
     const [imageError, setImageError] = useState(false);
 
-    const isFavorite = store.favorites.some(favorite => favorite.uid === props.uid);
+    const isFavorite = store.favorites.some(favorite => favorite.uid === props.uid && favorite.type === `planets`);
 
     const handleAddFavorites = () => {
-        isFavorite ? actions.removeFavorite(props.uid) :
-            actions.addFavorites({ title: props.title, uid: props.uid });
+        isFavorite ? actions.removeFavorite(props) :
+            actions.addFavorites({ type: `planets`, title: props.title, uid: props.uid });
     };
     const handleImageError = () => {
         setImageError(true);

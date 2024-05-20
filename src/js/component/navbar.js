@@ -41,8 +41,8 @@ export const Navbar = () => {
                             {store.favorites.length > 0 ? (
                                 store.favorites.map((item, index) => (
                                     <div key={index} className="dropdown-item d-flex justify-content-between align-items-center">
-                                        <Link to={`/people/${item.uid}`}>{item.title}</Link>
-                                        <button className="btn btn-outline-danger btn-sm" onClick={() => actions.removeFavorite(item.uid)}>
+                                        <Link to={`/${item.type}/${item.uid}`}>{item.title}</Link>
+                                        <button className="btn btn-outline-danger btn-sm" onClick={() => actions.removeFavorite(item)}>
                                             <i className="fa fa-trash"></i>
                                         </button>
                                     </div>

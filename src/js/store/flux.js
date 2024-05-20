@@ -1,3 +1,4 @@
+import { element } from "prop-types";
 import { Characters } from "../component/characters";
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -48,9 +49,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const newfavorites = [...currentfavorites, name];
 				setStore({ favorites: newfavorites });
 			},
-			removeFavorite: (uid) => {
+			removeFavorite: (element) => {
 				const store = getStore();
-				const newfavorites = store.favorites.filter(favorite => favorite.uid !== uid);
+				console.log(store.favorites)
+				console.log(element)
+				const newfavorites = store.favorites.filter(favorite => favorite.uid !== element.uid || favorite.type !== element.type);
 				setStore({ favorites: newfavorites });
 			},
 			loadSomeData: () => {

@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export const Characters = (props) => {
     const { store, actions } = useContext(Context);
 
-    const isFavorite = store.favorites.some(favorite => favorite.uid === props.uid);
+    const isFavorite = store.favorites.some(favorite => favorite.uid === props.uid && favorite.type === `people`);
 
     const handleAddFavorites = () => {
-        isFavorite ? actions.removeFavorite(props.uid) :
-            actions.addFavorites({ title: props.title, uid: props.uid });
+        isFavorite ? actions.removeFavorite(props) :
+            actions.addFavorites({ type: `people`, title: props.title, uid: props.uid });
     };
 
     return (
